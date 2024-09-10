@@ -70,11 +70,7 @@ class QueryBuilder
 
         $columns = implode(",", $columnsArray);
         $questionMarks = str_repeat("?,", count($columnsArray) - 1) . "?";
-
-        // return $questionMarks;
-
         $sql = "INSERT INTO " . static::$table . "($columns) VALUES ($questionMarks)";
-        // return $sql;
         $query = $db->prepare($sql);
         $query->execute($columnsValuesArray);
         return [

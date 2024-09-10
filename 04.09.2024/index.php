@@ -4,15 +4,15 @@ include "QueryBuilder.php";
 include "User.php";
 $users = User::get(['id', "name", "email"], User::FETCH_ALL, "name LIKE '%n%'");
 $userCount = User::usersCount();
-// print_r($users);
+print_r($users);
 
-// $new_user = User::insert([
-//     'name'=>'Nisaa',
-//     'email'=>'nisa9@gmail.com',
-//     'password'=>'111'
-// ]);
+$new_user = User::insert([
+    'name'=>'Nisaa',
+    'email'=>'nisa9@gmail.com',
+    'password'=>'111'
+]);
 
-// print_r($new_user);
+print_r($new_user);
 
 
 // $updateUser = User::update([
@@ -24,5 +24,5 @@ $userCount = User::usersCount();
 
 //$deleteUser= User::delete('id=43');
 
-$userFind=User::find(39);
-print_r($userFind);
+// $userFind=User::find(39);
+// print_r($userFind);
